@@ -197,8 +197,9 @@ class HBNBCommand(cmd.Cmd):
                     print("** class doesn't exist **")
                     return None
 
+    def do_quit(self, args):
+        """Quit command to exit the program"""
+        return True
 
-
-
-        
-
+if __name__ == '__main__':
+    HBNBCommand().cmdloop()
