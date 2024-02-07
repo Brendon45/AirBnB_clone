@@ -25,6 +25,7 @@ from models.city import City
 from models import storage
 from models.base_model import BaseModel
 
+
 class HBNBCommand(cmd.Cmd):
     """Entry point of the interpreter"""
     prompt = "(hbnb) "
@@ -57,14 +58,14 @@ class HBNBCommand(cmd.Cmd):
             new_creation = eval(args[0] + '()')
             models.storage.save()
             print(new_creation.id)
-        
+
     def do_show(self, args):
         """
         Prints the string representation of an instance based on the class name
         - If the class name is missing, print ** class name missing **
         - If the class name doesn’t exist, print ** class doesn't exist **
         - If the id is missing, print ** instance id missing **
-        - If the instance of the class name doesn’t exist for the id, print ** no instance found **
+        - If the instance of the class name doesn’t exist for the id
         - Usage: show <class name> <id>
         """
         strings = args.split()
@@ -88,12 +89,12 @@ class HBNBCommand(cmd.Cmd):
          - If the class name is missing, print ** class name missing **
          - If the class name doesn’t exist, print ** class doesn't exist **
          - If the id is missing, print ** instance id missing **
-         - If the instance of the class name doesn’t exist for the id, print ** no instance found **
+         - If the instance of the class name doesn’t exist for the id
          - Usage: destroy <class name> <id>
          """
         args = args.split()
         objects = models.storage.all()
-        
+
         if len(args) == 0:
             print('** class name missing **')
         elif args[0] not in HBNBCommand.__classes:
@@ -107,41 +108,41 @@ class HBNBCommand(cmd.Cmd):
                 models.storage.save()
             else:
                 print('** no instance found **')
-    
+
     def do_all(self, args):
         """
-        It prints all string representation of all instances based or not on the class name
+        It prints all string representation of all instances based
         - The printed result must be a list of strings
-        - If the class name doesn’t exist, print ** class doesn't exist **
+        - If the class name doesn’t exist, message
         """
         args = args.split()
         objects = models.storage.all()
         new_list = []
-        
-        if len(args) == 0;
+
+        if len(args) == 0:
             for obj in objects.values():
                 new_list.append(obj.__str__())
             print(new_list)
         elif args[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
-         else:
+        else:
             for obj in objects.values():
                 if obj.__class__.__name__ == args[0]:
                     new_list.append(obj.__str__())
             print(new_list)
-    
+
     def do_update(self, args):
         """
-        Updates an instance based on the class name and id by adding or updating attribute
+        Updates an instance based on the class name and id by adding
         - If the class name is missing, print ** class name missing **
         - If the class name doesn’t exist, print ** class doesn't exist **
         - If the id is missing, print ** instance id missing **
-        - If the value for the attribute name doesn’t exist, print ** value missing **
+        - If the value for the attribute name doesn’t exist, print ** value
         - Usage update <class name> <id> <attribute name> "<attribute value>"
         """
         objects = models.storage.all()
         args = args.split(" ")
-        
+
         if len(args) == 0:
             print("** class name missing **")
         elif args[0] not in HBNBCommand.__classes:
@@ -157,18 +158,18 @@ class HBNBCommand(cmd.Cmd):
             obj = objects.get(key_find, None)
 
         if not obj:
-                print("** no instance found **")
-                return
+            print("** no instance found **")
+            return
         setattr(obj, args[2], args[3].lstrip('"').rstrip('"'))
         models.storage.save()
-    
+
     def emptyline(self):
         """
-        This method overrides the default behavior of executing the last non-empty command
+        This method overrides the default behavior of executing the last
         -Nothing is executed in response to an empty line
         """
         pass
-    
+
     def check_class_name(self, name=""):
         """Check if the user input contains a class name and class ID"""
         if len(name) == 0:
@@ -184,7 +185,7 @@ class HBNBCommand(cmd.Cmd):
             return False
         else:
             return True
-    
+
     def found_class_name(self, name=""):
         """Search for a class within the given name"""
         if self.check_class_name(name):
@@ -200,6 +201,7 @@ class HBNBCommand(cmd.Cmd):
     def do_quit(self, args):
         """Quit command to exit the program"""
         return True
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
