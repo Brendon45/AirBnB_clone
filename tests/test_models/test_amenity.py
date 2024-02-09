@@ -9,6 +9,7 @@ from models.base_model import BaseModel
 import pep8
 import unittest
 
+
 class TestAmenity(unittest.TestCase):
     """
     Tests for the amenity class methods
@@ -27,7 +28,7 @@ class TestAmenity(unittest.TestCase):
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/amenity.py'])
         self.assertEqual(result.total_errors, 0,
-                            "Found code style errors (and warnings).")
+                         "Found code style errors (and warnings).")
 
     def test_doc_constructor(self):
         """
@@ -46,12 +47,13 @@ class TestAmenity(unittest.TestCase):
         with self.subTest(msg='Attributes'):
             self.assertIsInstance(Amenity.name, str)
 
-     def test_pep8_conformance_test_amenity(self):
+    def test_pep8_conformance_test_amenity(self):
         """test_state.py complies to PEP8."""
         pep8style = pep8.StyleGuide(quiet=True)
         res = pep8style.check_files(['tests/test_models/test_amenity.py'])
         self.assertEqual(res.total_errors, 0,
-                            "Found code style errors (and warnings).")
+                         "Found code style errors (and warnings).")
+
 
 if __name__ == '__main__':
     unittest.main()
