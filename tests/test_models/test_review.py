@@ -9,6 +9,7 @@ from models.base_model import BaseModel
 import pep8
 import unittest
 
+
 class TestReview(unittest.TestCase):
     """
     Testing the review class
@@ -19,7 +20,7 @@ class TestReview(unittest.TestCase):
         """
         doc = Review.__doc__
         self.assertGreater(len(doc), 1)
-    
+
     def test_pep8_conformance_review(self):
         """
         models/review.py complies to PEP8.
@@ -27,8 +28,8 @@ class TestReview(unittest.TestCase):
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/review.py'])
         self.assertEqual(result.total_errors, 0,
-                            "Found code style errors (and warnings).")
-    
+                         "Found code style errors (and warnings).")
+
     def test_doc_constructor(self):
         """
         Test case for constructor documentation.
@@ -53,8 +54,8 @@ class TestReview(unittest.TestCase):
         pep8style = pep8.StyleGuide(quiet=True)
         res = pep8style.check_files(['tests/test_models/test_review.py'])
         self.assertEqual(res.total_errors, 0,
-                            "Found code style errors (and warnings).")
+                         "Found code style errors (and warnings).")
+
 
 if __name__ == '__main__':
     unittest.main()
-    
