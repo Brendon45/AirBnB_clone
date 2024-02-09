@@ -9,12 +9,15 @@ from time import sleep
 from models.base_model import BaseModel
 import unittest
 
+
 class TestBaseModel(unittest.TestCase):
     """
     A base class that withhold all test cases
     """
     def test_doc_module(self):
-        """Test case for module documentation."""
+        """
+        Test case for module documentation
+        ."""
         doc = BaseModel._doc_
         self.assertGreater(len(doc), 1)
 
@@ -25,8 +28,8 @@ class TestBaseModel(unittest.TestCase):
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/base_model.py'])
         self.assertEqual(result.total_errors, 0,
-                            "Found code style errors (and warnings).")
-    
+                         "Found code style errors (and warnings).")
+
     def test_doc_constructor(self):
         """
         Test case for constructor documentation
@@ -36,7 +39,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test_first_task(self):
         """
-        Creation of the test BaseModel instance and its conversion to a dictionary
+        Creation of the test BaseModel instance and its conversion to a dict
         """
         my_model = BaseModel()
         self.assertIs(type(my_model), BaseModel)
@@ -99,7 +102,7 @@ class TestBaseModel(unittest.TestCase):
         id_model = my_model.id
 
         expected = '[BaseModel] ({}) {}'\
-                    .format(id_model, my_model.__dict__)
+                   .format(id_model, my_model.__dict__)
         self.assertEqual(str(my_model), expected)
 
     def test_constructor_kwargs(self):
@@ -123,8 +126,8 @@ class TestBaseModel(unittest.TestCase):
         """
         b3 = BaseModel()
         b3.save()
-        with open("file.json", 'r' as f:
-                self.assertIn(b3.id, f.read())
+        with open("file.json", 'r') as f:
+            self.assertIn(b3.id, f.read())
 
     def test_pep8_conformance_test_base_model(self):
         """
@@ -133,15 +136,16 @@ class TestBaseModel(unittest.TestCase):
         pep8style = pep8.StyleGuide(quiet=True)
         res = pep8style.check_files(['tests/test_models/test_base_model.py'])
         self.assertEqual(res.total_errors, 0,
-                            "Found code style errors (and warnings).")
+                         "Found code style errors (and warnings).")
 
     def test_uuid(self):
         """
         Test generation of unique UUIDs
-        ."""
+        """
         model = BaseModel()
         model_2 = BaseModel()
         self.assertNotEqual(model.id, model_2.id)
+
 
 if __name__ == '__main__':
     unittest.main()
