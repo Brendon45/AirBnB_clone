@@ -8,6 +8,7 @@ import pep8
 from models.base_model import BaseModel
 from models.user import User
 
+
 class TestUser(unittest.TestCase):
     """
     Test cases for the user class
@@ -27,7 +28,7 @@ class TestUser(unittest.TestCase):
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/user.py'])
         self.assertEqual(result.total_errors, 0,
-                            "Found code style errors (and warnings).")
+                         "Found code style errors (and warnings).")
 
     def test_doc_constructor(self):
         """Test case for constructor documentation."""
@@ -39,7 +40,8 @@ class TestUser(unittest.TestCase):
         pep8style = pep8.StyleGuide(quiet=True)
         res = pep8style.check_files(['tests/test_models/test_user.py'])
         self.assertEqual(res.total_errors, 0,
-                            "Found code style errors (and warnings).")
+                         "Found code style errors (and warnings).")
+
     def test_class(self):
         """
         Tests for different attributes
@@ -52,6 +54,7 @@ class TestUser(unittest.TestCase):
             self.assertIsInstance(User.password, str)
             self.assertIsInstance(User.first_name, str)
             self.assertIsInstance(User.last_name, str)
+
 
 if __name__ == '__main__':
     unittest.main()
