@@ -5,11 +5,11 @@ Test class modules for testing documentations
 import pep8
 import inspect
 
+
 class TestClassDocumentation():
     """
     Class for testing multiple classes.
     """
-
 
     def __init__(self, tests, _class):
         """
@@ -44,6 +44,7 @@ class TestClassDocumentation():
             # Retrieve module docstring
             doc = self.name.__doc__
             self.tests.assertGreaterEqual(len(doc), 1)
+
 
 if __name__ == '__main__':
     unittest.main()
