@@ -11,6 +11,7 @@ from models.review import Review
 from models.state import State
 from models.base_model import BaseModel
 
+
 class FileStorage():
     """
     - Handles serialization of instances to JSON
@@ -36,7 +37,7 @@ class FileStorage():
 
     def save(self):
         """
-        Serializes __objects to JSON and saves it to the JSON file(__file__path)
+        Serializes __objects to JSON and saves it to the JSON file
         """
         new_dict = {}
         for key, value in FileStorage.__objects.items():
@@ -60,4 +61,3 @@ class FileStorage():
 
         except FileNotFoundError:
             pass
-
