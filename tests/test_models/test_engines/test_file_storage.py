@@ -19,6 +19,7 @@ from models.city import City
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 
+
 class TestFileStorage(unittest.TestCase):
     """
     Testing case class for FileStorage module.
@@ -62,7 +63,7 @@ class TestFileStorage(unittest.TestCase):
         """
 
         self.assertEqual(dict, type(self.storage.all()))
-    
+
     def test_add_user_to_storage(self):
         """Test the addition of a new user"""
         objects = self.storage.all()
@@ -71,7 +72,7 @@ class TestFileStorage(unittest.TestCase):
         self.storage.new(self.u1)
         key = "{}.{}".format(self.u1.__class__.__name__, self.u1.id)
         self.assertIsNotNone(objects[key])
-    
+
     def test_file_contains_data(self):
         """
         Check if the 'file.json' contains data after Storage Engine operations.
@@ -82,7 +83,7 @@ class TestFileStorage(unittest.TestCase):
 
     def test_documentation(self):
         """
-        Verify the presence and correctness of docstrings for each function in the FileStorage class.
+        Verify the presence and correctness of docstrings for each function
         """
 
         self.assertTrue(FileStorage.all.__doc__)
@@ -122,6 +123,7 @@ class TestFileStorage(unittest.TestCase):
             pass
         else:
             os.mknod("file.json")
+
 
 if __name__ == '__main__':
     unittest.main()
