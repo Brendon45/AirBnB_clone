@@ -2,6 +2,7 @@
 """Class inheriting from BaseModel."""
 from models.base_model import BaseModel
 
+
 class City(BaseModel):
     """
     Public class attributes
