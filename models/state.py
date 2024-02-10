@@ -3,7 +3,7 @@
 from models.base_model import BaseModel
 
 
-class State(Basemodel):
+class State(BaseModel):
     """State class representing a geographical state."""
 
     name = ""
