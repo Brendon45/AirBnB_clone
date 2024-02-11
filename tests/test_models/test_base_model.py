@@ -17,7 +17,7 @@ class TestBaseModel(unittest.TestCase):
     def test_doc_module(self):
         """
         Test case for module documentation
-        ."""
+        """
         doc = BaseModel._doc_
         self.assertGreater(len(doc), 1)
 
@@ -30,11 +30,11 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    def test_doc_constructor(self):
+    def test_doc_module(self):
         """
-        Test case for constructor documentation
-        ."""
-        doc = BaseModel.__init__.__doc__
+        Test case for module documentation
+        """
+        doc = BaseModel.__doc__
         self.assertGreater(len(doc), 1)
 
     def test_first_task(self):
