@@ -1,0 +1,14 @@
+/* GLOBAL STYLES */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    color: #484848;
+    font-size: 14px;
+    /* Specify font family */
+    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
