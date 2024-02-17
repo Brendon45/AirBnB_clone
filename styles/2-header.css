@@ -1,0 +1,9 @@
+/* This CSS code styles the header element */
+header {
+    /* Set the background color to red */
+    background-color: #FF0000;
+    /* Set the height to 70 pixels */
+    height: 70px;
+    /* Set the width to 100% */
+    width: 100%;
+}
