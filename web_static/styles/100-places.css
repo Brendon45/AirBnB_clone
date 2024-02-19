@@ -1,0 +1,76 @@
+.places .amenities h2,
+.places .reviews h2 {
+    font-size: 16px;
+    border-bottom: 1px solid #DDDDDD;
+    width: 100%;
+    text-align: left;
+}
+
+/* .amenities styles */
+.amenities {
+    margin-top: 40px;
+}
+
+
+/* List of amenities */
+.amenities ul,
+.reviews ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Amenity Item */
+.amenities .amenity-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Amenity Icon */
+.amenities .amenity-item .tv-icon,
+.amenities .amenity-item .pet-icon,
+.amenities .amenity-item .wifi-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-size: cover;
+    margin-right: 20px;
+}
+
+/* Pictures goes here */
+.amenities .tv-icon {
+    background-image: url("../images/icon_tv.png");
+}
+
+.amenities .pet-icon {
+    background-image: url("../images/icon_pets.png");
+}
+
+.amenities .wifi-icon {
+    background-image: url("../images/icon_wifi.png");
+}
+
+.reviews {
+    margin-top: 40px;
+}
+
+.reviews .item-class {
+    text-align: left;
+}
+
+.reviews li {
+    margin-bottom: 30px;
+}
+
+.reviews h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.reviews p {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+article:last-child .reviews li:last-child {
+    margin-bottom: 0;
+}
