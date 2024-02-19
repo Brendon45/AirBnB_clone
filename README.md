@@ -45,7 +45,7 @@ $
 $ echo "help" | ./console.py
 (hbnb)
 
-Documented commands (type help <topic>):
+## Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
 (hbnb) 
@@ -56,7 +56,7 @@ $
 $ cat test_help | ./console.py
 (hbnb)
 
-Documented commands (type help <topic>):
+## Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
 (hbnb) 
@@ -69,4 +69,4 @@ All tests should also pass in non-interactive mode: $ echo "python3 -m unittest 
 ## AUTHORS
 Brendon Jeje <jejebrendon722@gmai.com>
 
-## Happy coding ![AKUREK](https://www.codester.com/static/uploads/items/000/021/21656/preview.jpg)
+![AKUREK](https://www.codester.com/static/uploads/items/000/021/21656/preview.jpg)
